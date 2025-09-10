@@ -4,44 +4,44 @@
 
 for ((i=0;i<10;i+=1))
 do 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "HalfCheetah-v5" \
 	--seed $i
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "Hopper-v5" \
 	--seed $i
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "Walker2d-v5" \
 	--seed $i
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "Ant-v5" \
 	--seed $i
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "Humanoid-v5" \
 	--seed $i
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "InvertedPendulum-v5" \
 	--seed $i \
 	--start_timesteps 1000
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "InvertedDoublePendulum-v5" \
 	--seed $i \
 	--start_timesteps 1000
 
-	CUDA_VISIBLE_DEVICES=0 python main.py \
+	CUDA_VISIBLE_DEVICES=2 python main.py \
 	--policy "TD3" \
 	--env "Reacher-v5" \
 	--seed $i \

@@ -16,8 +16,11 @@ def eval_policy(policy, env_name, seed, eval_episodes=10):
 	eval_env = gym.make(env_name)
 
 	avg_reward = 0.
-	for _ in range(eval_episodes):
-		state, done = eval_env.reset(seed=seed), False
+	for q in range(eval_episodes):
+		if q == 0:
+			state, done = eval_env.reset(seed=seed), False
+		else:
+			state, done = eval_env.reset(), False
 		state = np.concatenate((state[0], np.zeros_like(state[0])))
 		while not done:
 			action = policy.select_action(np.array(state))
@@ -144,7 +147,7 @@ if __name__ == "__main__":
 			# +1 to account for 0 indexing. +0 on ep_timesteps since it will increment +1 even if done=True
 			print(f"Total T: {t+1} Episode Num: {episode_num+1} Episode T: {episode_timesteps} Reward: {episode_reward:.3f}")
 			# Reset environment
-			state, done = env.reset(seed=args.seed), False
+			state, done = env.reset(), False
 			state = np.concatenate((state[0], np.zeros_like(state[0])))
 			episode_reward = 0
 			episode_timesteps = 0
